@@ -119,7 +119,7 @@ Required OpenCV version: **4.10**
 
 In the root directory:
 ```shell
-cd build
+mkdir build && cd build
 cmake ..
 make
 ./private_protector
