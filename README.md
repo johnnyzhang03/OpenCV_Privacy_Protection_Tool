@@ -101,11 +101,11 @@ cv::CommandLineParser parser(
 ### 3. Usage Instructions
 
 #### 3.1 Video Capture
-The project is developed under the Ubuntu system in WSL2. Developers cannot use the web camera directly in WSL2 due to historical reasons. Therefore, I use **FFmpeg** to capture the video under Windows and then send the data to WSL2 via UDP.
+The project is developed under the Ubuntu system in WSL2. Developers cannot use the web camera directly in WSL2 due to historical reasons. Therefore, **FFmpeg** is needed to capture the video under Windows and then send the data to WSL2 via UDP.
 
 To run the project, you need to download **FFmpeg** in both Windows and Ubuntu.
 
-In windows, use root user to access PowerShell and run the command:
+In windows, use root access to run the command in PowerShell:
 ```shell
 ffmpeg -f dshow -i video="Integrated Camera" -preset ultrafast -vcodec libx264 -b:v 500k -f mpegts udp://<IP address>:<Port number>
 ```
@@ -125,7 +125,7 @@ make
 ./private_protector
 ```
 
-If you want to costmize the argument, please refer to the following example:
+If you want to custmize the argument, please refer to the following example:
 ```shell
 ./private_protector -mode=mask -blur_size=10 -pixel_size=10 -mask_image=/path/to/image
 ```
